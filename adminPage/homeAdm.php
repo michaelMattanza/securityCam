@@ -46,11 +46,11 @@
                             <div class="row" style="margin-bottom: 10%;">
                                 <div class="card" style="width:98%;">
                                     <div class="card-body">
-                                        <h4 class="card-title">Database</h4>
-                                        <p class="card-text">Visualizza situazione database</p>
+                                        <h4 class="card-title">Messaggi</h4>
+                                        <p class="card-text">Visualizza Messaggi ricevuti</p>
                                     </div>
                                     <div class="card-footer">
-                                        <a type="button" class="btn btn-primary btn-lg btn-block" href="dbInfo.php">Vai!</a>
+                                        <a type="button" class="btn btn-primary btn-lg btn-block" href="messageInfo.php">Vai!</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,8 +61,8 @@
                                     <div class="row" style="margin-bottom: 10%;">
                                             <div class="card" style="width:98%;">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Servizi attivi (?)</h4>
-                                                    <p class="card-text">Servizi di registrazione in uso</p>
+                                                    <h4 class="card-title">Informazioni sistema</h4>
+                                                    <p class="card-text">Presentazione del sistema</p>
                                                 </div>
                                                 <div class="card-footer">
                                                     <a href="onlineServices.php" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
@@ -74,8 +74,8 @@
                                     <div class="row" style="margin-bottom: 10%;">
                                         <div class="card" style="width:98%;">
                                             <div class="card-body">
-                                                <h4 class="card-title">Impostazioni</h4>
-                                                <p class="card-text">Backup, logout...</p>
+                                                <h4 class="card-title">Logout</h4>
+                                                <p class="card-text">Esci dal sistema</p>
                                             </div>
                                             <div class="card-footer">
                                                 <a href="option.html" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>

@@ -26,18 +26,18 @@ and open the template in the editor.
             </div>
             <div class="row" style="margin-top: 2%; margin-bottom: 2%;"> <!-- TITLE AND MENU -->
                 <div class="col-4">
-                    <a href="home.php">
+                    <a href="homeAdm.php">
                         <button type="button" class="btn btn-outline-dark btn-lg btn-block " style="margin-right:2%" >Home</button>
                     </a>
                 </div>
                 <div class="col-4">
                     <a href="video.php">
-                        <button type="button" class="btn btn-outline-dark btn-lg btn-block " style="margin-right:2%">Video</button>
+                        <button type="button" class="btn btn-outline-dark btn-lg btn-block " style="margin-right:2%">Users</button>
                     </a>
                 </div>
                 <div class="col-4">
                     <a  href="option.php">    
-                        <button type="button" class="btn btn-outline-dark btn-lg btn-block " style="margin-right:2%">Option</button>
+                        <button type="button" class="btn btn-outline-dark btn-lg btn-block " style="margin-right:2%">Messages</button>
                     </a>
                 </div>
                 

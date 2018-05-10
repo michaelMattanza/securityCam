@@ -30,6 +30,17 @@
                     <div class="col-2"></div>
                     <div class="col-8">
                         <form action="backPage/redirecting.php" method="GET">
+                             <div class="form-group">
+                                  <label for="inputUsername">Username*</label>
+                                  <input type="text" class="form-control" name="inputUser" placeholder="MyUsername">
+                                </div>
+                                     
+                                <div class="form-group">
+                                    <label for="inputPassword">Password*</label>
+                                    <input type="password" class="form-control" name="inputPass" placeholder="Password1234">
+                                </div>
+                            <button type="submit" value="Submit" class="btn btn-outline-primary">Login</button>
+                        </form>
                             <!--    
                                 <div class="form-group">
                                     <label for="inputAddress">Email*</label>
