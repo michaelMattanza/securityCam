@@ -79,7 +79,7 @@
                                                 <p class="card-text">Backup, logout, contatta un admin.</p>
                                             </div>
                                             <div class="card-footer">
-                                                <a href="option.php/?logout=1" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
+                                                <a href="option.php" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
                                             </div>
                                         </div>
                                     </div>

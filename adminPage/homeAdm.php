@@ -74,11 +74,11 @@
                                     <div class="row" style="margin-bottom: 10%;">
                                         <div class="card" style="width:98%;">
                                             <div class="card-body">
-                                                <h4 class="card-title">Logout</h4>
+                                                <h4 class="card-title"> <img src="../immagini/userOption.jpeg" style="width: 20%; height: 30%;">Logout</h4>
                                                 <p class="card-text">Esci dal sistema</p>
                                             </div>
                                             <div class="card-footer">
-                                                <a href="option.html" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
+                                                <a href="../backPage/logout.php" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
                                             </div>
                                         </div>
                                     </div>
