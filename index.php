@@ -1,65 +1,140 @@
-<!DOCTYPE HTML>
+<?php
+ session_start();
+?>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>SecurityCam</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <style type="text/css">
-            body 
-            {
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-                background-position: center center;
-            }
-        </style>
+        <meta charset="UTF-8">
+        <title></title>
     </head>
     <body>
-        <div class="row">
-            <div class="container">
+        <div class="container">
             
+            <div class="row">
                 <div class="col-12">
-                    <div  class="row"  style="margin-bottom: 3%;">
-                        <img src="immagini/logo2.jpg" class="rounded mx-auto d-block">
-                    </div>
-                </div>
-                
-                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand">Menu</a>
                     
-                    <div class="col-2"></div>
-                    <div class="col-8">
-                        <form action="backPage/redirecting.php" method="GET">
-                             <div class="form-group">
-                                  <label for="inputUsername">Username*</label>
-                                  <input type="text" class="form-control" name="inputUser" placeholder="MyUsername">
-                                </div>
-                                     
-                                <div class="form-group">
-                                    <label for="inputPassword">Password*</label>
-                                    <input type="password" class="form-control" name="inputPass" placeholder="Password1234">
-                                </div>
-                            <button type="submit" value="Submit" class="btn btn-outline-primary">Login</button>
-                        </form>
-                            <!--    
-                                <div class="form-group">
-                                    <label for="inputAddress">Email*</label>
-                                    <input type="text" class="form-control" id="inputEmail" placeholder="example@domain.com">
-                                </div>
-                            -->   
-                                
-                            <div class="form-group">
-                                
-                                
-                        <div class ="row">
-                            <a href="userPage/register.php"> Create an account</a>
-                        </div>
-                                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="#Home">Home</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="#info_sistema">Informazioni sistema</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="#acquista">Acquista</a>
+                        </li>
+                        
+                                                
+                        <li class="nav-item">
+                            <a class="nav-link" href="userPage/infoproject.html">Dietro le quinte</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Login</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Link Esterni
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://github.com/michaelMattanza">Github</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://www.facebook.com/michael.mattanza">Facebook</a>
+                            <div class="dropdown-divider" style="padding-bottom: 2px;"></div>
+                            <a class="dropdown-item" href="https://www.youtube.com/channel/UC5kgCp3QelYLPgbZ7kwU1wg">Youtube</a>
+                          </div>
+                        </li>
+                      </ul>
+                        
                     </div>
-                    <div class="col-2"></div>
+                  </nav>
+                </div>                   
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <div class="row" id="Home">
+                        <div  class="row"  style="margin-bottom: 3%;">
+                            <img  src="immagini/logo.png" class="rounded mx-auto d-block">
+                        </div>
                 </div>
                 
-            </div>
+                    <div id="Info_sistema" style="border-color: black;">
+                    <div class="row">
+                        <h2 style="position: center;">Cos'è SecurityCam?</h2><br>
+                        <p>
+                            E' un sistema di sicurezza economico ma efficiente che vanta di un sistema progettato 
+                            appositamente per l'ambiente domestico.
+                            Con questo sistema di sicurezza è possibile installare delle videocamere che riprendono la 
+                            vostra casa quando voi non ci siete e vi avvisano in caso un movimento venga rilevato!
+                            <br><br>
+                            Per informazioni contattare il gestore del servizio: <b>michael.mattanza@gmail.com</b> oppure
+                            <a href="userPage/register.php">iscriviti</a> al sito e contatta gli amministratori attraverso la funzione predisposta a tale 
+                            compito. 
+                        </p>
+                    </div>
+                    
+                    <div class="row">
+                        <h2 style="position: center;">Come funziona?</h2><br>
+                        <p>
+                            E' un sistema che sfrutta un <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi3</a> 
+                            come controllore delle videocamere installate. Esso elabora le informazioni ricevute e le gestisce
+                            affinche l'utente possa controllare i video registrati dalle videocamere che hanno rilevato un movimento.
+                        </p>
+                    </div>
+                </div>
+                    
+                <div class="row" id="acquista">
+                    <h2 style="position: center;">Acquista il servizio</h2><br>
+                </div>
+                    <div class="row" id="acquista" style="margin-top: 1%;">    
+                        <form method="POST" action="backPage/activateSubscription.php">
+                      
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="30">
+                                <label class="custom-control-label" for="customRadioInline1">1 Mese / 30€</label>
+                              </div>
+                            
+                              <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="90">
+                                <label class="custom-control-label" for="customRadioInline2">3 Mesi / 90€</label>
+                              </div>
+                            
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="180">
+                                <label class="custom-control-label" for="customRadioInline2">6 Mesi / 180€</label>
+                              </div>
+                        <button type="submit" class="btn btn-outline-primary btn-block" >Select</button>
+                   </form>
+                    </div>
+  
         </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+                
+            
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+       
     </body>
 </html>

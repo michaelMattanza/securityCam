@@ -47,7 +47,15 @@ and open the template in the editor.
                         <div class="col-2"></div>
                         <div class="col-8">
                                 <b><p style="position: center; margin-top: 2%;">Inserisci il messaggio per gli admin</p></b>
-                                <textarea rows="15" cols="77" style="position: center; display: block; margin: 0 auto;" name="messToSend" id="messToSend"></textarea> 
+                                <textarea rows="15" cols="77" style="
+                                          .boxsizingBorder {
+                                            -webkit-box-sizing: border-box;
+                                               -moz-box-sizing: border-box;
+                                                    box-sizing: border-box;
+                                        }
+                                          position: center; 
+                                          display: block; margin: 0 auto;" 
+                                          name="messToSend" id="messToSend"></textarea> 
                             </div>    
                         <div class="col-2"></div>
                     </div>
@@ -65,13 +73,13 @@ and open the template in the editor.
                 <div class="row" style="margin-bottom: 5%; margin-top: 5%; ">
                     <div class="col-2"></div>
                     <div class="col-8">
-                        <a type="button" class="btn btn-outline-primary btn-block" href="../backPage/logout.php">Logout</a>
+                        <a href="../backPage/logout.php"><button type="button" class="btn btn-outline-primary btn-block">Logout</button></a>
                     </div>
                     <div class="col-2"></div>
                 </div>
             </div>
         </div>
-        <script src="../backPage/javascript/jquery-3.3.1.min.js" 
+        <script src="../backPage/framework/jquery-3.3.1.min.js" 
      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   
       crossorigin="anonymous"></script> 
 

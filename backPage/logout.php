@@ -6,5 +6,5 @@
         }
         session_destroy();
         echo 'You have been logged out';
-        header("location: ../../index.php");
+        header("location: ../index.php");
 ?>

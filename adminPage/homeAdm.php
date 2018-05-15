@@ -61,8 +61,8 @@
                                     <div class="row" style="margin-bottom: 10%;">
                                             <div class="card" style="width:98%;">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Informazioni sistema</h4>
-                                                    <p class="card-text">Presentazione del sistema</p>
+                                                    <h4 class="card-title">Servizi attivi</h4>
+                                                    <p class="card-text">Account presenti nel sistema</p>
                                                 </div>
                                                 <div class="card-footer">
                                                     <a href="onlineServices.php" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
