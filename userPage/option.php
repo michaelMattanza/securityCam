@@ -64,6 +64,7 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-2"></div>
                         <div class="col-8">
+                            <input type="hidden" name="user_id" value="1">
                              <button type="submit" class="btn btn-outline-primary btn-block" style="margin-top: 1%" onclick="sendMsgFunction()">Submit</button>
                         </div>
                         <div class="col-2"></div>
@@ -87,12 +88,14 @@ and open the template in the editor.
 
            function sendMsgFunction(){
           var mess = $('#messToSend').val();
+          var sendto= $('#user_id').val();
 
          $.ajax({
            method: "POST",
            url: "../backPage/sendMessage.php",
            data: {  
-               "message": mess 
+               "message": mess,
+               "adminId": sendto
            },
            success: function (response){
                window.alert("Messaggio inviato correttamente!");

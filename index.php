@@ -15,7 +15,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <div class="container">
+        <div class="container" style="background-color: ">
             
             <div class="row">
                 <div class="col-12">
@@ -43,7 +43,7 @@ and open the template in the editor.
                         
                                                 
                         <li class="nav-item">
-                            <a class="nav-link" href="userPage/infoproject.html">Dietro le quinte</a>
+                            <a class="nav-link" href="userPage/infoproject.html">Registrati</a>
                         </li>
                         
                         <li class="nav-item">
@@ -69,18 +69,28 @@ and open the template in the editor.
                 </div>                   
             </div>
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
+                
+                <div class="col-12">
                     <div class="row" id="Home">
                         <div  class="row"  style="margin-bottom: 3%;">
-                            <img  src="immagini/logo.png" class="rounded mx-auto d-block">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                                <img  src="immagini/logo.png" class="rounded mx-auto d-block">
+                            </div>
+                            <div class="col-2"></div>
                         </div>
-                </div>
+                    </div>
                 
                     <div id="Info_sistema" style="border-color: black;">
                     <div class="row">
-                        <h2 style="position: center;">Cos'è SecurityCam?</h2><br>
-                        <p>
+                        <div class="col-6">
+                            <img src="immagini/mainIcon.jpeg" height="90%" width="70%">
+                        </div>
+                        <div class="col-6">
+                                                    <div class="row">
+                            <h2 style="align: center;">Cos'è SecurityCam?</h2><br>
+                        </div>
+                            <p> <br>
                             E' un sistema di sicurezza economico ma efficiente che vanta di un sistema progettato 
                             appositamente per l'ambiente domestico.
                             Con questo sistema di sicurezza è possibile installare delle videocamere che riprendono la 
@@ -90,25 +100,46 @@ and open the template in the editor.
                             <a href="userPage/register.php">iscriviti</a> al sito e contatta gli amministratori attraverso la funzione predisposta a tale 
                             compito. 
                         </p>
+                        </div>
                     </div>
                     
                     <div class="row">
+                        <div class="col-6">
                         <h2 style="position: center;">Come funziona?</h2><br>
                         <p>
                             E' un sistema che sfrutta un <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi3</a> 
-                            come controllore delle videocamere installate. Esso elabora le informazioni ricevute e le gestisce
-                            affinche l'utente possa controllare i video registrati dalle videocamere che hanno rilevato un movimento.
+                            come controllore delle videocamere installate. Esso interagisce attraverso il software <a href="https://github.com/ccrisan/motioneye/wiki/Install-On-Raspbian">motioneye</a> 
+                            con le videocamere posizionate nei punti strategici della casa. Supporta videocamere collegate direttamente alla porta seriale,
+                            videocamere USB e anche IPCam. Dopo aver rilevato un movimento, il vostro sistema registra il video provvedendo a salvarlo nella vostra
+                            galleria accedibile attraverso il sito internet.
                         </p>
                     </div>
+                      <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="immagini/rasp.png" height="90%" width="80%">
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-6">
+                                    <img src="immagini/motioneye_img.jpeg" height="90%" width="80%">
+                                </div>
+                            </div>
+                        </div>
                 </div>
-                    
-                <div class="row" id="acquista">
-                    <h2 style="position: center;">Acquista il servizio</h2><br>
+
+                        <div class="row">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                <div class="row" id="acquista" style="margin-top: 3%; margin-left: 8%">
+                    <h2 style="margin-left: 15%">Acquista il servizio</h2><br>
                 </div>
-                    <div class="row" id="acquista" style="margin-top: 1%;">    
+                    <div class="row" id="acquista" style="margin-top: 1%; margin-bottom: 2%; margin-left: 15%">    
                         <form method="POST" action="backPage/activateSubscription.php">
                       
-                            <div class="custom-control custom-radio custom-control-inline">
+                            <div class="custom-control custom-radio custom-control-inline" style="margin-bottom:1% ">
                                 <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="30">
                                 <label class="custom-control-label" for="customRadioInline1">1 Mese / 30€</label>
                               </div>
@@ -125,12 +156,13 @@ and open the template in the editor.
                         <button type="submit" class="btn btn-outline-primary btn-block" >Select</button>
                    </form>
                     </div>
-  
-        </div>
-                </div>
-                <div class="col-2"></div>
-            </div>
-                
+                            </div>
+                            <div class="col-2"></div>
+                    
+                        </div>   
+  </div>
+                    </div>
+                </div>                
             
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -6,6 +6,7 @@
     
     $mess= $_POST["message"];
     $my_us=$_SESSION["username"];
+    $admin=$_POST["adminId"];
     
     
     
