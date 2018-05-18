@@ -63,10 +63,10 @@
                                             <div class="card" style="width:98%;">
                                                 <div class="card-body">
                                                     <h4 class="card-title"> <img src="../immagini/userNews.jpeg" style="width: 20%; height: 30%;">News</h4>
-                                                    <p class="card-text">Presentazione del sistema, novità.</p>
+                                                    <p class="card-text">Presentazione del sistema</p>
                                                 </div>
                                                 <div class="card-footer">
-                                                    <a href="infoproject.html" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
+                                                    <a href="../index.php" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -79,7 +79,7 @@
                                                 <p class="card-text">Backup, logout, contatta un admin.</p>
                                             </div>
                                             <div class="card-footer">
-                                                <a href="../index.php" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
+                                                <a href="option.php" type="button" class="btn btn-primary btn-lg btn-block" >Vai!</a>
                                             </div>
                                         </div>
                                     </div>

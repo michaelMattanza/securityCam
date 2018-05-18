@@ -28,14 +28,6 @@ and open the template in the editor.
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav mr-auto">
-
-                        <li class="nav-item">
-                          <a class="nav-link" href="#Home">Home</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                          <a class="nav-link" href="#info_sistema">Informazioni sistema</a>
-                        </li>
                         
                         <li class="nav-item">
                           <a class="nav-link" href="#acquista">Acquista</a>
@@ -43,7 +35,7 @@ and open the template in the editor.
                         
                                                 
                         <li class="nav-item">
-                            <a class="nav-link" href="userPage/infoproject.html">Registrati</a>
+                            <a class="nav-link" href="userPage/register.php">Registrati</a>
                         </li>
                         
                         <li class="nav-item">

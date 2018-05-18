@@ -18,7 +18,7 @@ and open the template in the editor.
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     </head>
     <body>
-        <div class="container"> 
+        <div class="container" id="thisdiv"> 
             <div class="col-12">
                 <div  class="row"  style="margin-bottom: 3%;">
                     <img src="../immagini/logo.png" class="rounded mx-auto d-block">
@@ -82,30 +82,42 @@ and open the template in the editor.
                 <tbody>
         <?php
          require '../backPage/connectionDB.php';
-         $sql = "SELECT * FROM message ORDER BY id Desc";
+         $sql= 'SELECT * FROM user';
          $result = $conn->query($sql);
-         $sql = "SELECT * FROM user";
-         $res2= $conn->query($sql);
+         while($row = $result->fetch_assoc())
+         {
+             $us= $_SESSION["username"];
+             if($row["username"]==$us)
+             {
+                echo $myId= $row["id"];
+             }
+         }
+         $sql1= 'SELECT * FROM message WHERE id_receiver='.$myId.' GROUP BY id ASC';
+         $result1 = $conn->query($sql1);
          
-         if ($result->num_rows > 0) {
-    // output data of each row
-         while($row = $result->fetch_assoc()) 
+         while($row2 = $result1->fetch_assoc())
+         {
+             while($row = $result->fetch_assoc())
             {
-                while ($rowName = $res2->fetch_assoc())
+                if($row2["id_sender"]==$row["id"])
                 {
-                    if($row["id_sender"] == $rowName["id"])
-                        $tempName = $rowName["username"];
+                   $senderUs=$row["username"];
                 }
-                   echo '<tr class="clickable-row">';
-                   echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" value="'.$tempName.'">Reply</button></button></th>';
+            }
+            echo '<tr class="clickable-row">';
+            echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" value="'.$toSend.'">Reply</button></button></th>';
+            echo '<td>'.$senderUs.'</td>';
+            echo '<td>'.$row2["date"].'</td>';
+            echo '<td>'.$row2["message"].'</td>';
+            echo '</tr>';
+         }
+        /*  echo '<tr class="clickable-row">';
+                   echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" value="'.$toSend.'">Reply</button></button></th>';
                    echo '<td>'.$tempName.'</td>';
                    echo '<td>'.$row["date"].'</td>';
                    echo '<td>'.$row["message"].'</td>';
                    echo '</tr>';
-                
-             }
-         }
-        
+         */
         ?>
                     </tbody>
                 </table>
@@ -118,17 +130,24 @@ and open the template in the editor.
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 
+                    <script src="../backPage/framework/jquery-3.3.1.min.js" 
+     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   
+      crossorigin="anonymous"></script> 
       <script type="text/javascript">
            function sendFunction(){
           var userName = $('#usr-selected').val();
-          var text=$('#inputGroupSelect01').val();
+          var text=$('#resp').val();
+          console.log(userName);
+          console.log(text);
 
          $.ajax({
            method: "POST",
-           url: "../backPage/changeChmod.php",
-           data: { "userId": userName, "userRole": role },
+           url: "../backPage/sendMessage.php",
+           data: { "adminId": userName, "message": text },
            success: function (response){
-               $('#thisdiv').load(document.URL +  ' #thisdiv');
+               window.alert("Done");
+                $('#exampleModal').modal('hide');
+                $('#thisdiv').load(document.URL +  ' #thisdiv');
         }
 
         });
