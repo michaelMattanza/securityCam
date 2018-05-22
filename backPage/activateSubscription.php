@@ -18,8 +18,7 @@ $result = $conn->query($sql);
     }
 $n= date('Y-m-d');
  
-  $sql = 'SELECT * FROM subscription"
-          . "WHERE id_user='.$my_id;
+  $sql = 'SELECT * FROM subscription WHERE id_user='.$my_id;
 $result = $conn->query($sql);
 
  while($row = $result->fetch_assoc()){
@@ -32,21 +31,18 @@ $result = $conn->query($sql);
 if($subChoosed == "30")
 {
     $date1= date('Y-m-d', strtotime(' + 1 month'));
-    $result="Success";
+    $res="Success";
 }
 if($subChoosed == "90")
 {
     $date1= date('Y-m-d', strtotime(' + 3 month'));
-    $result="Success";
+    $res="Success";
 }
 if($subChoosed == "180")
 {
    $date1= date('Y-m-d', strtotime(' + 6 month'));
-   $result="Success";
+   $res="Success";
 }
 
-if($result == "Success")
-{
-    $sql = 'INSERT INTO subscription (id_user, date_activate, date_ending) VALUES ("'.$my_id.'",now(),'.$date1.')';
+    $sql = 'INSERT INTO subscription (id_user, date_activate, date_ending) VALUES ("'.$my_id.'",now(),"'.$date1.'")';
     $conn->query($sql);
-}

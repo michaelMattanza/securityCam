@@ -10,10 +10,10 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php   
+        <?php  
         session_start();
-        
         require 'connectionDB.php';
+        
         $sql = "SELECT * FROM user";
         $result = $conn->query($sql);
         
@@ -24,7 +24,7 @@ and open the template in the editor.
         if ($result->num_rows > 0) {
     // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo $row["username"].'<br> '.$row["password"];
+                
                 //echo "<br>"."Connecting to "." - Username: " . $name_readed."<br>";
                 if($name_readed == $row["username"] && $psswd_readed == $row["password"])
                 {
@@ -33,13 +33,12 @@ and open the template in the editor.
                     $_SESSION["autorized"]=1;
                     if($row["chmod"] == 'admin')
                     {
-                        echo $row["chmod"];
                         header("location: ../adminPage/homeAdm.php");
                     }
                     else
                         header("location: ../userPage/home.php");
                    
-                }
+                    }
             }
         }
         else {

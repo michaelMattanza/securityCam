@@ -1,6 +1,3 @@
-<?php
- session_start();
-?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -39,7 +36,7 @@ and open the template in the editor.
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
+                            <a class="nav-link" href="backPage/controlSession.php" >Login</a>
                         </li>
                         
                         <li class="nav-item dropdown">
@@ -83,10 +80,10 @@ and open the template in the editor.
                             <h2 style="align: center;">Cos'è SecurityCam?</h2><br>
                         </div>
                             <p> <br>
-                            E' un sistema di sicurezza economico ma efficiente che vanta di un sistema progettato 
+                            Security Cam è un sistema di sicurezza economico ma efficiente progettato 
                             appositamente per l'ambiente domestico.
-                            Con questo sistema di sicurezza è possibile installare delle videocamere che riprendono la 
-                            vostra casa quando voi non ci siete e vi avvisano in caso un movimento venga rilevato!
+                            Grazie a questo sistema è possibile installare delle videocamere che riprendano la 
+                            vostra casa quando voi non ci siete e che vi avvisino nel caso in cui un movimento venga rilevato!
                             <br><br>
                             Per informazioni contattare il gestore del servizio: <b>michael.mattanza@gmail.com</b> oppure
                             <a href="userPage/register.php">iscriviti</a> al sito e contatta gli amministratori attraverso la funzione predisposta a tale 
@@ -100,10 +97,10 @@ and open the template in the editor.
                         <h2 style="position: center;">Come funziona?</h2><br>
                         <p>
                             E' un sistema che sfrutta un <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi3</a> 
-                            come controllore delle videocamere installate. Esso interagisce attraverso il software <a href="https://github.com/ccrisan/motioneye/wiki/Install-On-Raspbian">motioneye</a> 
+                            come controllore delle videocamere installate. Esso interagisce, attraverso il software <a href="https://github.com/ccrisan/motioneye/wiki/Install-On-Raspbian">motioneye</a>, 
                             con le videocamere posizionate nei punti strategici della casa. Supporta videocamere collegate direttamente alla porta seriale,
-                            videocamere USB e anche IPCam. Dopo aver rilevato un movimento, il vostro sistema registra il video provvedendo a salvarlo nella vostra
-                            galleria accedibile attraverso il sito internet.
+                            videocamere USB e anche IPCam. Dopo aver rilevato un movimento, il vostro sistema registra il video, provvedendo a salvarlo nella vostra
+                            galleria a cui potrete accedere attraverso il sito internet.
                         </p>
                     </div>
                       <div class="col-6">

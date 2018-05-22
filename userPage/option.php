@@ -35,8 +35,8 @@ and open the template in the editor.
                         </a>
                     </div>
                     <div class="col-4">
-                        <a  href="infoproject.html">    
-                            <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Option</button>
+                        <a  href="../backPage/logout.php">    
+                            <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Logout</button>
                         </a>
                     </div>
 
@@ -71,13 +71,44 @@ and open the template in the editor.
                     </div>
                 </form>
                 
-                <div class="row" style="margin-bottom: 5%; margin-top: 5%; ">
-                    <div class="col-2"></div>
-                    <div class="col-8">
-                        <a href="../backPage/logout.php"><button type="button" class="btn btn-outline-primary btn-block">Logout</button></a>
-                    </div>
-                    <div class="col-2"></div>
+                <div class="row" style="margin-top: 2%;">
+                    
+                <table class="table" id="messTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Messsaggio</th>
+                    </tr>
+                </thead>
+                <tbody>          
+                  <?php
+                    require '../backPage/connectionDB.php';
+                    
+                    $sql='SELECT * FROM user';
+                    $result=$conn->query($sql);
+                    while($row = $result->fetch_assoc()){
+                        if($row["username"] == $_SESSION["username"])
+                        {
+                            $myId = $row["id"];
+                        }
+                    }
+
+                    $sql1='SELECT * FROM message where id_receiver='.$myId;
+                    $result1=$conn->query($sql1);
+                    while($row1 = $result1->fetch_assoc()){
+                        echo '<tr>';
+                        echo '<td>'.$row1["id"].'</td>';
+                        echo '<td>'.$row1["date"].'</td>';
+                        echo '<td>'.$row1["message"].'</td>';
+                        echo '</tr>';
+                    }
+                    
+                  ?>
+                    </tbody>
+                </table>
                 </div>
+                
             </div>
         </div>
         <script src="../backPage/framework/jquery-3.3.1.min.js" 
@@ -88,7 +119,7 @@ and open the template in the editor.
 
            function sendMsgFunction(){
           var mess = $('#messToSend').val();
-          var sendto= $('#user_id').val();
+          var sendto= 0;
 
          $.ajax({
            method: "POST",

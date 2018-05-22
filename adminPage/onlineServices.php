@@ -57,7 +57,6 @@ and open the template in the editor.
          require '../backPage/connectionDB.php';
          $sql = "SELECT * FROM user";
          $result = $conn->query($sql);
-         $n= date("Y-m-d");
          
          if ($result->num_rows > 0) {
     

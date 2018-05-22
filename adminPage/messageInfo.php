@@ -31,13 +31,13 @@ and open the template in the editor.
                     </a>
                 </div>
                 <div class="col-4">
-                    <a href="video.php">
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Users</button>
+                    <a href="onlineServices.php">
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">onlineService</button>
                     </a>
                 </div>
                 <div class="col-4">
-                    <a  href="option.php">    
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Messages</button>
+                    <a  href="messageInfo.php">    
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Messaggi</button>
                     </a>
                 </div>
                 
@@ -73,10 +73,10 @@ and open the template in the editor.
             <table class="table" id="messTable">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Messsage</th>
+                        <th scope="col">Rispondi</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Messsaggio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -84,33 +84,35 @@ and open the template in the editor.
          require '../backPage/connectionDB.php';
          $sql= 'SELECT * FROM user';
          $result = $conn->query($sql);
-         while($row = $result->fetch_assoc())
+         
+    /*     while($row = $result->fetch_assoc())
          {
-             $us= $_SESSION["username"];
-             if($row["username"]==$us)
+             if($_SESSION["username"] == $row["username"])
              {
-                echo $myId= $row["id"];
+                 $myId= $row["id"];
              }
          }
-         $sql1= 'SELECT * FROM message WHERE id_receiver='.$myId.' GROUP BY id ASC';
+         */
+         $sql1= 'SELECT * FROM message WHERE id_receiver=0 ORDER BY id DESC';
          $result1 = $conn->query($sql1);
          
-         while($row2 = $result1->fetch_assoc())
-         {
+         $us= $_SESSION["username"];
+         while ($row1 = $result1->fetch_assoc()){
              while($row = $result->fetch_assoc())
-            {
-                if($row2["id_sender"]==$row["id"])
-                {
-                   $senderUs=$row["username"];
-                }
-            }
-            echo '<tr class="clickable-row">';
-            echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" value="'.$toSend.'">Reply</button></button></th>';
-            echo '<td>'.$senderUs.'</td>';
-            echo '<td>'.$row2["date"].'</td>';
-            echo '<td>'.$row2["message"].'</td>';
-            echo '</tr>';
-         }
+                    {
+                        if($row1["id_sender"] == $row["id"])
+                        {
+                            $usSender= $row["username"];
+                        }
+                    }
+            
+                echo '<tr class="clickable-row">';
+                echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" value="'.$row1["id_sender"].'">Reply</button></button></th>';
+                echo '<td>'.$usSender.'</td>';
+                echo '<td>'.$row1["date"].'</td>';
+                echo '<td>'.$row1["message"].'</td>';
+                echo '</tr>';
+          }
         /*  echo '<tr class="clickable-row">';
                    echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" value="'.$toSend.'">Reply</button></button></th>';
                    echo '<td>'.$tempName.'</td>';
@@ -146,7 +148,6 @@ and open the template in the editor.
            data: { "adminId": userName, "message": text },
            success: function (response){
                window.alert("Done");
-                $('#exampleModal').modal('hide');
                 $('#thisdiv').load(document.URL +  ' #thisdiv');
         }
 
