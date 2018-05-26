@@ -31,13 +31,13 @@ and open the template in the editor.
                     </a>
                 </div>
                 <div class="col-4">
-                    <a href="video.php">
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Users</button>
+                    <a href="usersList.php">
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Clienti</button>
                     </a>
                 </div>
                 <div class="col-4">
-                    <a  href="option.php">    
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Messages</button>
+                    <a  href="messageInfo.php">    
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Messaggi</button>
                     </a>
                 </div>
                 
@@ -57,37 +57,28 @@ and open the template in the editor.
          require '../backPage/connectionDB.php';
          $sql = "SELECT * FROM user";
          $result = $conn->query($sql);
-         
-         if ($result->num_rows > 0) {
     
-         while($row = $result->fetch_assoc()) 
-            {
-             if($row["username"] == $_SESSION["username"]){
-                 $my_id= $row["id"];
-             }
-            }
-         }
          
-         $sqlw = "SELECT * FROM subscription"
-                 . "WHERE id_user=".$my_id;
+        
+         $sqlw = "SELECT * FROM subscription";
          $res = $conn->query($sqlw);
-          if ($result->num_rows > 0) {
     
          while($row = $res->fetch_assoc()) 
             {
-             if($n>$row["date_ending"])
-                 {
-                 Header( "Location:../login.php" );
+                while($row2 = $result->fetch_assoc()) 
+               {
+                if($row2["id"] == $row["id_user"]){
+                    $urs=$row2["username"];
                 }
-                
+               }
                 echo '<tr>';
                 echo '<th scope="row">'.$row["id"].'</th>';
-                echo '<td>'.$row["id_user"].'</td>';
+                echo '<td>'.$urs.'</td>';
                 echo '<td>'.$row["date_activate"].'</td>';
                 echo '<td>'.$row["date_ending"].'</td>';
                 echo '</tr>';
             }
-         }
+         
         
         ?>
                     </tbody>

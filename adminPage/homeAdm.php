@@ -34,7 +34,7 @@
                             <div class="row" style="margin-bottom: 10%;">
                             <div class="card" style="width:98%;">
                                 <div class="card-body">
-                                    <h4 class="card-title">Users</h4>
+                                    <h4 class="card-title"><img src="../immagini/usrList.jpg" style="width: 20%; height: 30%;">Users</h4>
                                     <p class="card-text">Amministra utenti registrati</p>
                                 </div>
                                 <div class="card-footer">
@@ -46,7 +46,7 @@
                             <div class="row" style="margin-bottom: 10%;">
                                 <div class="card" style="width:98%;">
                                     <div class="card-body">
-                                        <h4 class="card-title">Messaggi</h4>
+                                        <h4 class="card-title"><img src="../immagini/mess.jpg" style="width: 20%; height: 30%;">Messaggi</h4>
                                         <p class="card-text">Visualizza Messaggi ricevuti</p>
                                     </div>
                                     <div class="card-footer">
@@ -61,7 +61,7 @@
                                     <div class="row" style="margin-bottom: 10%;">
                                             <div class="card" style="width:98%;">
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Servizi attivi</h4>
+                                                    <h4 class="card-title"><img src="../immagini/motioneye_img.jpeg" style="width: 20%; height: 30%;">Servizi attivi</h4>
                                                     <p class="card-text">Account presenti nel sistema</p>
                                                 </div>
                                                 <div class="card-footer">
@@ -74,7 +74,7 @@
                                     <div class="row" style="margin-bottom: 10%;">
                                         <div class="card" style="width:98%;">
                                             <div class="card-body">
-                                                <h4 class="card-title"> <img src="../immagini/userOption.jpeg" style="width: 20%; height: 30%;">Logout</h4>
+                                                <h4 class="card-title"> <img src="../immagini/logout.jpg" style="width: 20%; height: 30%;">Logout</h4>
                                                 <p class="card-text">Esci dal sistema</p>
                                             </div>
                                             <div class="card-footer">

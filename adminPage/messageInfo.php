@@ -32,12 +32,12 @@ and open the template in the editor.
                 </div>
                 <div class="col-4">
                     <a href="onlineServices.php">
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">onlineService</button>
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Servizi attivi</button>
                     </a>
                 </div>
                 <div class="col-4">
-                    <a  href="messageInfo.php">    
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Messaggi</button>
+                    <a  href="usersList.php">    
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Lista utenti</button>
                     </a>
                 </div>
                 

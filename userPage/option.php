@@ -30,13 +30,13 @@ and open the template in the editor.
                         </a>
                     </div>
                     <div class="col-4">
-                       <a href="streaming.php">
-                           <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Streaming</button>
+                        <a href="../index.php">
+                           <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Presentazione sistema</button>
                         </a>
                     </div>
                     <div class="col-4">
-                        <a  href="../backPage/logout.php">    
-                            <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Logout</button>
+                        <a  href="video.php">    
+                            <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Video</button>
                         </a>
                     </div>
 

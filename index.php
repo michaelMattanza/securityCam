@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
@@ -60,13 +55,14 @@ and open the template in the editor.
             <div class="row">
                 
                 <div class="col-12">
+                    
                     <div class="row" id="Home">
                         <div  class="row"  style="margin-bottom: 3%;">
-                            <div class="col-2"></div>
-                            <div class="col-8">
-                                <img  src="immagini/logo.png" class="rounded mx-auto d-block">
-                            </div>
-                            <div class="col-2"></div>
+                                
+                                <div class="col-10">
+                                    <img  src="immagini/logo.png" class="rounded mx-auto d-block">
+                                </div>
+                                <div class="col-2"></div>
                         </div>
                     </div>
                 

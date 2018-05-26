@@ -17,7 +17,7 @@
         </style>
     </head>
     <body>
-        <div class="row">
+        
             <div class="container">
             
                 <div class="col-12">

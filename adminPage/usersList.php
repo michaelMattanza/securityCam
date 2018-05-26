@@ -31,13 +31,13 @@ and open the template in the editor.
                     </a>
                 </div>
                 <div class="col-4">
-                    <a href="video.php">
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Users</button>
+                    <a href="onlineServices.php">
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Servizi online</button>
                     </a>
                 </div>
                 <div class="col-4">
-                    <a  href="option.php">    
-                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Messages</button>
+                    <a  href="messageInfo.php">    
+                        <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Messaggi</button>
                     </a>
                 </div>
                 
