@@ -30,6 +30,7 @@ and open the template in the editor.
                 {
                     $_SESSION["username"]=$name_readed;
                     $_SESSION["password"]=$psswd_readed;
+                    $_SESSION["id"]= $row["id"];
                     $_SESSION["autorized"]=1;
                     if($row["chmod"] == 'admin')
                     {
@@ -39,6 +40,10 @@ and open the template in the editor.
                         header("location: ../userPage/home.php");
                    
                     }
+                else if($name_readed == $row["username"] && $psswd_readed != $row["password"])
+                {
+                    header("location: ../login.php");
+                }
             }
         }
         else {

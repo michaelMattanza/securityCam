@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+     
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <meta charset="UTF-8">
         <title></title>
@@ -122,7 +122,7 @@
                     <h2 style="margin-left: 15%">Acquista il servizio</h2><br>
                 </div>
                     <div class="row" id="acquista" style="margin-top: 1%; margin-bottom: 2%; margin-left: 15%">    
-                        <form method="POST" action="backPage/activateSubscription.php">
+                        <form method="POST">
                       
                             <div class="custom-control custom-radio custom-control-inline" style="margin-bottom:1% ">
                                 <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="30">
@@ -136,9 +136,9 @@
                             
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="180">
-                                <label class="custom-control-label" for="customRadioInline2">6 Mesi / 180€</label>
+                                <label class="custom-control-label" for="customRadioInline3">6 Mesi / 180€</label>
                               </div>
-                        <button type="submit" class="btn btn-outline-primary btn-block" >Select</button>
+                            <button type="submit" class="btn btn-outline-primary btn-block" onclick="activateFunction()">Select</button>
                    </form>
                     </div>
                             </div>
@@ -149,9 +149,29 @@
                     </div>
                 </div>                
             
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="backPage/framework/jquery-3.3.1.min.js" 
+     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   
+      crossorigin="anonymous"></script>
+            
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+            
+            <script type="text/javascript">
+             function activateFunction(){
+          var days = $('#customRadioInline1').val();
        
+         $.ajax({
+           method: "POST",
+           url: "backPage/activateSubscription.php",
+           data: { 
+               "sub_selected": days 
+           },
+           success: function (){
+               window.alert("Abbonamento rinnovato correttamente");
+        }
+
+        });
+      }
+            </script>
     </body>
 </html>

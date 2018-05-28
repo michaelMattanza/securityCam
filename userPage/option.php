@@ -35,8 +35,8 @@ and open the template in the editor.
                         </a>
                     </div>
                     <div class="col-4">
-                        <a  href="video.php">    
-                            <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Video</button>
+                        <a  href="../backPage/logout.php">    
+                            <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Logout</button>
                         </a>
                     </div>
 

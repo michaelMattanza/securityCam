@@ -39,7 +39,7 @@
                                     <p class="card-text">Vai alla pagina di Streaming.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a type="button" class="btn btn-primary btn-lg btn-block" href="streaming.php">Vai!</a>
+                                    <a type="button" class="btn btn-primary btn-lg btn-block" href="http://192.168.1.56:8765/" target="_blank">Vai!</a>
                                 </div>
                                  </div>
                             </div>
@@ -51,7 +51,7 @@
                                         <p class="card-text">Apri la galleria dei video salvati.</p>
                                     </div>
                                     <div class="card-footer">
-                                        <a type="button" class="btn btn-primary btn-lg btn-block" href="http://192.168.1.56/video.php">Vai!</a>
+                                        <a href="http://192.168.1.56/video.php" type="button" class="btn btn-primary btn-lg btn-block">Vai!</a>
                                     </div>
                                 </div>
                             </div>
@@ -88,5 +88,24 @@
                         </div>
                     </div>
                 </div>
+               <script src="../backPage/framework/jquery-3.3.1.min.js" 
+     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   
+      crossorigin="anonymous"></script> 
+        <script type="text/javascript">
+            function controlStreaming(){
+                var url = $('#urlStreaming').val();
+                $.ajax({
+                 method: "POST",
+                 url: "../backPage/controlRasp.php",
+                 data: { 
+                     "urlChoosed": url
+                 },
+                 success: function (response){
+                     $('#thisdiv').load(document.URL +  ' #thisdiv');
+              }
+
+              });
+        }
+        </script>
     </body>
 </html>

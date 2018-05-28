@@ -26,7 +26,7 @@
                         </a>
                     </div>
                     <div class="col-4">
-                        <a  href="infoproject.html">    
+                        <a  href="infoproject.html">
                             <button type="button" class="btn btn-outline-primary btn-lg btn-block " style="margin-right:2%">Option</button>
                         </a>
                     </div>
@@ -35,7 +35,7 @@
 
                 <div class="row" style="margin-top: 2%;"> <!-- VIDEO CONTAINER -->
                     <?php
-                        
+
                         $dir    = '../video';
                         $scanned_directory = array_diff(scandir($dir), array('..', '.'));
 
@@ -44,16 +44,16 @@
                                 $handle = opendir('../video/'.$scanned_directory[$i].'/');
                                 $url = '../video/'.$scanned_directory[$i].'/';
                                 while (false !== ($file = readdir($handle))) {
-                                    if ($file != "." && $file != "..") {  
-                                   echo '<video style="width: 23%; height: 23%; margin-right: 5%; margin-left: 5%; margin-bottom: 5%;" controls>';
+                                    if ($file != "." && $file != "..") {
+                                   echo '<video width: "23%" height: "23%" controls>';
                                     echo '<source src="'.$url.$file.'" type="video/mp4">';
                                     echo '</video>';
                                     }
                                 }
                             }
                             closedir($handle);
-                        
-                                
+
+
                     ?>
                 </div>
 
