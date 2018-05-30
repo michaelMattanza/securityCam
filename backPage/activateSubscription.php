@@ -66,3 +66,4 @@ if($done == false){
         $sql = 'INSERT INTO subscription (id_user, date_activate, date_ending) VALUES ("'.$my_id.'",now(),"'.$date1.'")';
         $conn->query($sql);
 }
+$result="SUCCESS";

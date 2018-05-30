@@ -48,7 +48,7 @@ and open the template in the editor.
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Name</th>
-                            <th scope="col">E-mail</th>
+                            <th scope="col">Data attivazione</th>
                             <th scope="col">Data scadenza</th>
                         </tr>
                     </thead>
@@ -84,33 +84,7 @@ and open the template in the editor.
                     </tbody>
                 </table>
             </div>
-            <form method="POST" >
-        <div class="row"style="margin-top: 5%;" >
-            <div class="col-3">
-                
-            </div>
-            <div class="col-6" name="thisdiv" name="thisdiv">
-               <label for="inputUsername">Insert username</label>
-               <input type="text" class="form-control" name="inputUser" style="margin-bottom: 2%" id="inputUser">
-               <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01">Convert account type to: </label>
-                </div>
-                <select class="custom-select" id="inputGroupSelect01" name="inputSelected">
-                  <option selected>Choose...</option>
-                  <option value="admin">Admin</option>
-                  <option value="user">User</option>
-                </select>
-                   
-                   <button type="button" class="btn btn-outline-primary" onclick="changeFunction()">Submit</button>
-                </div>
-              <!-- this need to be added -->
-              <div id='resultDiv' ></div>
-            </div>
-            <div class="col-3">
-            </div>
-        </div>
-    </form>
+
         </div>
         
         <script src="../backPage/framework/jquery-3.3.1.min.js" 

@@ -33,12 +33,12 @@
                         <form action="backPage/redirecting.php" method="GET">
                              <div class="form-group">
                                   <label for="inputUsername">Username*</label>
-                                  <input type="text" class="form-control" name="inputUser" placeholder="MyUsername">
+                                  <input type="text" class="form-control" name="inputUser" placeholder="MyUsername" required>
                                 </div>
                                      
                                 <div class="form-group">
                                     <label for="inputPassword">Password*</label>
-                                    <input type="password" class="form-control" name="inputPass" placeholder="Password1234">
+                                    <input type="password" class="form-control" name="inputPass" placeholder="Password1234" required>
                                 </div>
                             <button type="submit" value="Submit" class="btn btn-outline-primary">Login</button>
                         </form>

@@ -135,10 +135,10 @@
                               </div>
                             
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="180">
+                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" value="180">
                                 <label class="custom-control-label" for="customRadioInline3">6 Mesi / 180€</label>
                               </div>
-                            <button type="submit" class="btn btn-outline-primary btn-block" onclick="activateFunction()">Select</button>
+                            <button type="button" class="btn btn-outline-primary btn-block" onclick="activateFunction()">Select</button>
                    </form>
                     </div>
                             </div>
@@ -158,16 +158,22 @@
             
             <script type="text/javascript">
              function activateFunction(){
-          var days = $('#customRadioInline1').val();
-       
+          var radios = document.getElementsByName('customRadioInline1');
+          for (var i = 0, length = radios.length; i < length; i++)
+            {
+             if (radios[i].checked)
+             {
+              var days= radios[i].value;
+              break;
+             }
+            }
+            console.log(days);
          $.ajax({
            method: "POST",
            url: "backPage/activateSubscription.php",
-           data: { 
-               "sub_selected": days 
-           },
-           success: function (){
-               window.alert("Abbonamento rinnovato correttamente");
+           data: { "sub_selected": days },
+           success: function (response){
+               window.alert("Aggiornato abbonamento");
         }
 
         });

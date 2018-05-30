@@ -28,6 +28,7 @@
             <div  class="row"  style="margin-bottom: 3%;">
                 <div class="col-10" align="right;"><img src="../immagini/logo.png" class="rounded mx-auto d-block"></div>
             </div>
+             
          </div>
             <div class="row">
                            <div class="col-6">
@@ -86,6 +87,25 @@
                              </div>
 
                         </div>
+         
+             <div class="row">
+                 <div class="col-5"></div>
+                 <div class="col-4"><b>Scadenza abbonamento:</b><br>
+                 <?php
+                 require '../backPage/connectionDB.php';
+                 $sql= "SELECT * from subscription";
+                 $r= $conn->query($sql);
+                 
+                 while($row = $r->fetch_assoc()){
+                     if($row["id_user"]==$_SESSION["id"])
+                     {
+                         echo '<p>'.$row["date_ending"].'</p>';
+                     }
+                 }
+                 ?>
+                 </div>
+                 <div class="col-3"></div>
+             </div>
                     </div>
                 </div>
                <script src="../backPage/framework/jquery-3.3.1.min.js" 
