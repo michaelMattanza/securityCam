@@ -2,21 +2,36 @@
     session_start();
     require 'connectionDB.php';
         
-        $us = $_REQUEST['inputU'];
-        $pswd = $_REQUEST['inputP'];
-        $email = $_REQUEST['inputE'];
+        $us = $_POST['inputU'];
+        $pswd = $_POST['inputP'];
+        $email = $_POST['inputE'];
         
-        $sql = "INSERT INTO user (username, email, password) VALUES ('$us', '$email', '$pswd')";
-        
-        if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        $sqlControll= 'SELECT * FROM user';
+        $result=$conn->query($sqlControll);
+        while ($rowControll = $result->fetch_assoc()){
+            if($rowControll["username"]==$us)
+            {
+                $alreadyExist= true;
+                $myjson= json_encode($alreadyExist);
+                return $myjson;
+            }
+        }
+        if($alreadyExist==false){
+        $sql = 'INSERT INTO user (username, email, password, chmod) VALUES ("'.$us.'", "'.$email.'", "'.$pswd.'", "user")';
+        $conn->query($sql);
+
+        $sql2= 'SELECT * FROM user';
+        $result=$conn->query($sql2);
+        while($row= $result->fetch_assoc() )
+        {
+            if($row["username"] == $us){
+                $myId= $row["id"];
+            }
+        }
         $_SESSION["username"]=$us;
         $_SESSION["password"]=$pswd;
+        $_SESSION["id"]=$myId;
         $_SESSION["autorized"]=1; 
         header("location: ../userPage/home.php");
-    } else {
-        echo "Error non entraaaaaaa: " . $sql . "<br>" . $conn->error;
-    }
-    
-    $conn->close();
+        }
 

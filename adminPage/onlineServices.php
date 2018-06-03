@@ -15,7 +15,8 @@ and open the template in the editor.
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <meta charset="UTF-8">
-        <title></title>
+        <title>SecurityCam</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div class="container">
@@ -87,9 +88,7 @@ and open the template in the editor.
 
         </div>
         
-        <script src="../backPage/framework/jquery-3.3.1.min.js" 
-     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   
-      crossorigin="anonymous"></script> 
+        <script src="../backPage/framework/jquery-3.3.1.min.js"></script> 
 
     <script type='text/javascript'>
 

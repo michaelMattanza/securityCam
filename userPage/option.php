@@ -47,7 +47,7 @@ and open the template in the editor.
                         <div class="col-2"></div>
                         <div class="col-8">
                                 <b><p style="position: center; margin-top: 2%;">Inserisci il messaggio per gli admin</p></b>
-                                <textarea rows="15" cols="77" style="
+                                <textarea rows="15" cols="95" style="
                                           .boxsizingBorder {
                                             -webkit-box-sizing: border-box;
                                                -moz-box-sizing: border-box;
@@ -111,9 +111,7 @@ and open the template in the editor.
                 
             </div>
         </div>
-        <script src="../backPage/framework/jquery-3.3.1.min.js" 
-     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   
-      crossorigin="anonymous"></script> 
+        <script src="../backPage/framework/jquery-3.3.1.min.js" ></script> 
 
     <script type='text/javascript'>
 

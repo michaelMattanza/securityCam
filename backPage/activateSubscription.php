@@ -30,6 +30,8 @@ while($rowControll = $resultControll->fetch_assoc())
             if($subChoosed == "90")
                 {
                     $temp= $new_date->add(new DateInterval('P3M')) -> format('Y-m-d');
+                    
+                echo $temp;
                 }
            if($subChoosed == "180")
                 {
