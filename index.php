@@ -42,9 +42,6 @@
                             <a class="dropdown-item" href="https://github.com/michaelMattanza">Github</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="https://www.facebook.com/michael.mattanza">Facebook</a>
-                            <div class="dropdown-divider" style="padding-bottom: 2px;"></div>
-                            <a class="dropdown-item" href="https://www.youtube.com/channel/UC5kgCp3QelYLPgbZ7kwU1wg">Youtube</a>
-                          </div>
                         </li>
                       </ul>
                         
@@ -73,7 +70,7 @@
                         </div>
                         <div class="col-6">
                                                     <div class="row">
-                            <h2 style="align: center;">Cos'è SecurityCam?</h2><br>
+                            <h2 style="align: center;">   Cos'è SecurityCam?</h2><br>
                         </div>
                             <p> <br>
                             Security Cam è un sistema di sicurezza economico ma efficiente progettato 

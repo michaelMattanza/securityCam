@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+$_SESSION["response"]= false;
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -18,7 +21,7 @@ and open the template in the editor.
 <!-- TITLE -->
              <div class="col-12">
                 <div  class="row"  style="margin-bottom: 3%;">
-                    <img src="immagini/logo.png" class="rounded mx-auto d-block">
+                    <img src="../immagini/logo.png" class="rounded mx-auto d-block">
                 </div>
             </div>
              
@@ -26,24 +29,24 @@ and open the template in the editor.
             <div class="row">
             <div class="col-2"></div>
                 <div class="col-8">
-                    <form action="../backPage/insert.php" method="POST">
+                    <form>
 
                      <div class="form-group">
                         <label for="inputEmail">Email*</label>
-                        <input type="text" class="form-control" name="inputE" placeholder="example@domain.com">
+                        <input type="text" class="form-control" name="inputE" id="inputE" placeholder="example@domain.com" required>
                      </div>
 
                      <div class="form-group">
                         <label for="inputUsername">Username*</label>
-                        <input type="text" class="form-control" name="inputU" placeholder="MyUsername">
+                        <input type="text" class="form-control" name="inputU" id="inputU" placeholder="MyUsername" required>
                      </div>
 
                      <div class="form-group">
                         <label for="inputPassword">Password*</label>
-                        <input type="password" class="form-control" name="inputP" placeholder="Password1234">
+                        <input type="password" class="form-control" name="inputP" id="inputP" placeholder="Password1234" required>
                      </div>
 
-                        <button class="btn btn-outline-primary">Sign in</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="changeFunction()">Sign in</button>
                     </form>
                     </div>
             <div class="col-2"></div>
@@ -55,19 +58,37 @@ and open the template in the editor.
 
     <script type='text/javascript'>
 
-           function registerFunction(){
-          var userName = $('#inputUser').val();
-          var role=$('#inputGroupSelect01').val();
-
+           function changeFunction(){
+          var pass = $('#inputP').val();
+          var usr= $('#inputU').val();
+          var mail=$('#inputE').val();
+          
+          if(usr==null|| usr == "", pass==null||pass=="", mail==null||mail==""){
+              window.alert("Campo/i vuoti");
+              return false;
+          }
+          
+          console.log(usr);
          $.ajax({
            method: "POST",
-           url: "../backPage/changeChmod.php",
-           data: { "userId": userName, "userRole": role },
+           url: "../backPage/insert.php",
+           data: { "InsertedPass": pass, 
+               "InsertedName": usr,
+               "InsertedMail": mail
+           },
            success: function (response){
-               $('#thisdiv').load(document.URL +  ' #thisdiv');
+               var r= JSON.parse(response);
+
+            if(r === true)
+            {  
+                window.alert("Nome utente gia esistente");
+            }
+            else{
+                window.location.replace("home.php");
+            }
         }
 
-        });
+        })  ;
       }
   </script>
     </body>

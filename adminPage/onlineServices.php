@@ -56,7 +56,7 @@ and open the template in the editor.
                     <tbody>
         <?php
          require '../backPage/connectionDB.php';
-         $sql = "SELECT * FROM user";
+       /*  $sql = "SELECT * FROM user";
          $result = $conn->query($sql);
     
          
@@ -79,7 +79,20 @@ and open the template in the editor.
                 echo '<td>'.$row["date_ending"].'</td>';
                 echo '</tr>';
             }
-         
+         */
+
+         $sql="SELECT subscription.id, user.username, subscription.date_activate, subscription.date_ending 
+               FROM subscription INNER JOIN user
+               ON subscription.id_user=user.id";
+         $result= $conn->query($sql);
+         while($row = $result->fetch_assoc()){
+            echo '<tr>';
+            echo '<th scope="row">'.$row["id"].'</th>';
+            echo '<td>'.$row["username"].'</td>';
+            echo '<td>'.$row["date_activate"].'</td>';
+            echo '<td>'.$row["date_ending"].'</td>';
+            echo '</tr>';
+         }
         
         ?>
                     </tbody>

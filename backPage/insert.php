@@ -1,19 +1,23 @@
 <?php
     session_start();
     require 'connectionDB.php';
+
+        $alreadyExist= false;
+        $us = $_POST["InsertedName"];
+        $pswd = $_POST["InsertedPass"];
+        $email = $_POST["InsertedMail"];
+
         
-        $us = $_POST['inputU'];
-        $pswd = $_POST['inputP'];
-        $email = $_POST['inputE'];
         
         $sqlControll= 'SELECT * FROM user';
         $result=$conn->query($sqlControll);
         while ($rowControll = $result->fetch_assoc()){
             if($rowControll["username"]==$us)
             {
-                $alreadyExist= true;
-                $myjson= json_encode($alreadyExist);
-                return $myjson;
+                $alreadyExist = true;
+                $response = json_encode($alreadyExist);
+                echo $response;
+                
             }
         }
         if($alreadyExist==false){
@@ -32,6 +36,8 @@
         $_SESSION["password"]=$pswd;
         $_SESSION["id"]=$myId;
         $_SESSION["autorized"]=1; 
-        header("location: ../userPage/home.php");
+        $response = json_encode($alreadyExist);
+        echo $response;
         }
+    
 

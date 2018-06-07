@@ -94,7 +94,7 @@ and open the template in the editor.
                         }
                     }
 
-                    $sql1='SELECT * FROM message where id_receiver='.$myId;
+                    $sql1='SELECT * FROM message where id_receiver='.$myId.' ORDER BY id DESC';
                     $result1=$conn->query($sql1);
                     while($row1 = $result1->fetch_assoc()){
                         echo '<tr>';

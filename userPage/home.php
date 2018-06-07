@@ -92,6 +92,7 @@
                  <div class="col-5"></div>
                  <div class="col-4"><b>Scadenza abbonamento:</b><br>
                  <?php
+                 $exist = false;
                  require '../backPage/connectionDB.php';
                  $sql= "SELECT * from subscription";
                  $r= $conn->query($sql);
@@ -100,17 +101,17 @@
                      if($row["id_user"]==$_SESSION["id"])
                      {
                          echo '<p>'.$row["date_ending"].'</p>';
+                         $exist= true;
                      }
                  }
+                 if($exist == false){echo '<p>Abbonamento non attivo</p>';}
                  ?>
                  </div>
                  <div class="col-3"></div>
              </div>
                     </div>
                 </div>
-               <script src="../backPage/framework/jquery-3.3.1.min.js" 
-     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   
-      crossorigin="anonymous"></script> 
+               <script src="../backPage/framework/jquery-3.3.1.min.js"></script> 
         <script type="text/javascript">
             function controlStreaming(){
                 var url = $('#urlStreaming').val();

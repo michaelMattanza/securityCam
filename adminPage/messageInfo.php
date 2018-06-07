@@ -46,29 +46,7 @@ and open the template in the editor.
             
 
 <!-- Button trigger modal -->
-<form method="POST">
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Answer</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                      <textarea rows="6" cols="50" id="resp"></textarea>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="sendFunction()">Send</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-             <!-- Modal end -->           
+<form method="POST">         
             
             <div id="thisdiv" style="margin-top: 2%; margin-bottom: 1%;">   
             <table class="table" id="messTable">
@@ -82,49 +60,49 @@ and open the template in the editor.
                 </thead>
                 <tbody>
         <?php
+ 
          require '../backPage/connectionDB.php';
-         $sql= 'SELECT * FROM user';
+         $sql= 'SELECT message.date, user.username, message.message, message.id_sender
+                FROM message
+                INNER JOIN user ON message.id_sender=user.id
+                WHERE message.id_receiver=0
+                ORDER BY message.date DESC';
          $result = $conn->query($sql);
          
-    /*     while($row = $result->fetch_assoc())
-         {
-             if($_SESSION["username"] == $row["username"])
-             {
-                 $myId= $row["id"];
-             }
-         }
-         */
-         $sql1= 'SELECT * FROM message WHERE id_receiver=0 ORDER BY id DESC';
-         $result1 = $conn->query($sql1);
-         
-         $us= $_SESSION["username"];
-         while ($row1 = $result1->fetch_assoc()){
-             while($row = $result->fetch_assoc())
-                    {
-                        if($row1["id_sender"] == $row["id"])
-                        {
-                            $usSender= $row["username"];
-                        }
-                    }
-            
-                echo '<tr class="clickable-row">';
-                echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" value="'.$row1["id_sender"].'">Reply</button></button></th>';
-                echo '<td>'.$usSender.'</td>';
-                echo '<td>'.$row1["date"].'</td>';
-                echo '<td>'.$row1["message"].'</td>';
+         while($row= $result->fetch_assoc()){
+                echo '<tr>';
+                echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" onclick="selectedUser('.$row["id_sender"].')">Reply</button></button></th>';
+                echo '<td>'.$row["username"].'</td>';
+                echo '<td>'.$row["date"].'</td>';
+                echo '<td>'.$row["message"].'</td>';
                 echo '</tr>';
-          }
-        /*  echo '<tr class="clickable-row">';
-                   echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" value="'.$toSend.'">Reply</button></button></th>';
-                   echo '<td>'.$tempName.'</td>';
-                   echo '<td>'.$row["date"].'</td>';
-                   echo '<td>'.$row["message"].'</td>';
-                   echo '</tr>';
-         */
+         }
+         
         ?>
                     </tbody>
                 </table>
             </div>
+                <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Answer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <textarea rows="6" cols="60" id="resp"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="sendFunction()">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <!-- Modal end -->  
         </form>
 
 
@@ -135,8 +113,12 @@ and open the template in the editor.
 
                     <script src="../backPage/framework/jquery-3.3.1.min.js"></script> 
       <script type="text/javascript">
+          var user;
+          function selectedUser(selected_id){
+              user= selected_id;
+          }
            function sendFunction(){
-          var userName = $('#usr-selected').val();
+          var userName = user;
           var text=$('#resp').val();
           console.log(userName);
           console.log(text);
@@ -146,7 +128,7 @@ and open the template in the editor.
            url: "../backPage/sendMessage.php",
            data: { "adminId": userName, "message": text },
            success: function (response){
-               window.alert("Done");
+               window.alert("Risposta inviata correttamente");
                 $(location).attr('href','messageInfo.php');
         }
 

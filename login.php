@@ -22,7 +22,7 @@
             
                 <div class="col-12">
                     <div  class="row"  style="margin-bottom: 3%;">
-                        <img src="immagini/logo2.jpg" class="rounded mx-auto d-block">
+                        <img src="immagini/logo.png" class="rounded mx-auto d-block">
                     </div>
                 </div>
                 
@@ -30,25 +30,19 @@
                     
                     <div class="col-2"></div>
                     <div class="col-8">
-                        <form action="backPage/redirecting.php" method="GET">
+                        <form>
                              <div class="form-group">
                                   <label for="inputUsername">Username*</label>
-                                  <input type="text" class="form-control" name="inputUser" placeholder="MyUsername" required>
+                                  <input type="text" class="form-control" name="inputUser" id="inputUser" placeholder="MyUsername" required="required"/>
                                 </div>
                                      
                                 <div class="form-group">
                                     <label for="inputPassword">Password*</label>
-                                    <input type="password" class="form-control" name="inputPass" placeholder="Password1234" required>
+                                    <input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="Password1234" required="required"/>
                                 </div>
-                            <button type="submit" value="Submit" class="btn btn-outline-primary">Login</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="loginFunction()">Login</button>
                         </form>
-                            <!--    
-                                <div class="form-group">
-                                    <label for="inputAddress">Email*</label>
-                                    <input type="text" class="form-control" id="inputEmail" placeholder="example@domain.com">
-                                </div>
-                            -->   
-                                
+
                             <div class="form-group">
                                 
                                 
@@ -62,5 +56,35 @@
                 
             </div>
         </div>
+
+        <script src="backPage/framework/jquery-3.3.1.min.js"></script> 
+
+    <script type='text/javascript'>
+
+           function loginFunction(){
+          var userName = $('#inputUser').val();
+          var password=$('#inputPass').val();
+          
+          if(userName==null|| userName == "", password==null||password==""){
+              window.alert("Campo/i vuoti");
+              return false;
+          }
+
+         $.ajax({
+           method: "POST",
+           url: "backPage/redirecting.php",
+           data: { "user": userName, "pass": password },
+           success: function (response){
+              var r = JSON.parse(response);
+              if(r=="administrator"){window.location.replace("adminPage/homeAdm.php");}
+              else if(r=="user"){window.location.replace("userPage/home.php");}
+              else if(r=="password"){window.alert("Password Errata!");}
+              else if(r=="no") {window.alert("Utente non trovato");}
+        }
+
+        });
+      }
+  </script>
+
     </body>
 </html>
