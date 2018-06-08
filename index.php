@@ -113,35 +113,53 @@
                 </div>
 
                         <div class="row">
-                            <div class="col-2"></div>
-                            <div class="col-8">
-                <div class="row" id="acquista" style="margin-top: 3%; margin-left: 8%">
-                    <h2 style="margin-left: 15%">Acquista il servizio</h2><br>
-                </div>
-                    <div class="row" id="acquista" style="margin-top: 1%; margin-bottom: 2%; margin-left: 15%">    
-                        <form method="POST">
-                      
-                            <div class="custom-control custom-radio custom-control-inline" style="margin-bottom:1% ">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="30">
-                                <label class="custom-control-label" for="customRadioInline1">1 Mese / 30€</label>
-                              </div>
-                            
-                              <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="90">
-                                <label class="custom-control-label" for="customRadioInline2">3 Mesi / 90€</label>
-                              </div>
-                            
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" value="180">
-                                <label class="custom-control-label" for="customRadioInline3">6 Mesi / 180€</label>
-                              </div>
-                            <button type="button" class="btn btn-outline-primary btn-block" onclick="activateFunction()">Select</button>
-                   </form>
-                    </div>
+                           
+                            <div class="col-6">
+                                <div class="row" id="acquista" style="margin-top: 3%; margin-left: 8%">
+                                    <h2 style="margin-left: 15%">Acquista il servizio</h2><br>
+                                </div>
+                                <div class="row" id="acquista" style="margin-top: 3%; margin-left: 8%">
+                                    <p>Acquista il servizio e riceverai il tuo Raspberry in azienda gia configurato e pronto all'uso.</p>
+                                </div>
+                                    <div class="row" id="acquista" style="margin-top: 1%; margin-bottom: 2%; margin-left: 15%">    
+                                        <form method="POST">
+
+                                            <div class="custom-control custom-radio custom-control-inline" style="margin-bottom:1% ">
+                                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="30">
+                                                <label class="custom-control-label" for="customRadioInline1">1 Mese / 30€</label>
+                                              </div>
+
+                                              <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="90">
+                                                <label class="custom-control-label" for="customRadioInline2">3 Mesi / 90€</label>
+                                              </div>
+
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" value="180">
+                                                <label class="custom-control-label" for="customRadioInline3">6 Mesi / 180€</label>
+                                              </div>
+                                            <button type="button" class="btn btn-outline-primary btn-block" onclick="activateFunction()">Select</button>
+                                   </form>
+                                    </div>
                             </div>
-                            <div class="col-2"></div>
+                            <div class="col-6">
+                                <div class="row" id="acquista" style="margin-top: 3%; margin-left: 8%">
+                                    <h2 style="margin-left: 15%">Download (windows)</h2><br>
+                                </div>
+                                <div class="row" id="acquista" style="margin-top: 3%; margin-left: 8%">
+                                    <p>I seguenti software permettono la visualizzazione dei video di sicurezza e le videocamere in Streaming!</p><br>
+                                </div>
+                                <div class="row" style="margin-top: 1%; margin-bottom: 2%; margin-left: 8%; margin-right: 5%;">  
+                                    <div class="col-6">
+                                     <a href="programs/SecurityVideo.exe" download> <button type="button" class="btn btn-outline-primary btn-block">SecurityVideo.exe</button></a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="programs/SecurityStreaming.exe" download> <button  style="margin-left: 5%;" type="button" class="btn btn-outline-primary btn-block">SecurityStreaming.exe</button></a>                                       
+                                    </div>
+                                </div>
+                            </div>
                     
-                        </div>   
+                        </div>     
   </div>
                     </div>
                 </div>                
