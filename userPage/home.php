@@ -52,7 +52,7 @@
                                         <p class="card-text">Apri la galleria dei video salvati.</p>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="http://192.168.1.56/video.php" type="button" class="btn btn-primary btn-lg btn-block">Vai!</a>
+                                        <a href="http://192.168.1.56/video.php" target="_blank" type="button" class="btn btn-primary btn-lg btn-block">Vai!</a>
                                     </div>
                                 </div>
                             </div>

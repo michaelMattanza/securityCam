@@ -31,7 +31,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="backPage/controlSession.php" >Login</a>
+                            <a class="nav-link" href="backPage/controlSession.php" >Accedi</a>
                         </li>
                         
                         <li class="nav-item dropdown">
@@ -42,6 +42,9 @@
                             <a class="dropdown-item" href="https://github.com/michaelMattanza">Github</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="https://www.facebook.com/michael.mattanza">Facebook</a>
+                            <div class="dropdown-divider"></div>
+                           <a class="dropdown-item" href="https://www.linkedin.com/in/michael-mattanza-641798162/">Linkedin</a> 
+                          </div>
                         </li>
                       </ul>
                         

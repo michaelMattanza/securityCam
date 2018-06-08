@@ -48,7 +48,7 @@ and open the template in the editor.
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">Nome</th>
                             <th scope="col">E-mail</th>
                             <th scope="col">A/U</th>
                         </tr>
@@ -82,14 +82,13 @@ and open the template in the editor.
                 
             </div>
             <div class="col-6" name="thisdiv" name="thisdiv">
-               <label for="inputUsername">Insert username</label>
+               <label for="inputUsername">Inserisci nume utente:</label>
                <input type="text" class="form-control" name="inputUser" style="margin-bottom: 2%" id="inputUser">
                <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01">Convert account type to: </label>
+                  <label class="input-group-text" for="inputGroupSelect01">Converti l'account in: </label>
                 </div>
                 <select class="custom-select" id="inputGroupSelect01" name="inputSelected">
-                  <option selected>Choose...</option>
                   <option value="admin">Admin</option>
                   <option value="user">User</option>
                 </select>

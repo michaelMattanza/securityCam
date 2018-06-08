@@ -34,7 +34,7 @@
                             <div class="row" style="margin-bottom: 10%;">
                             <div class="card" style="width:98%;">
                                 <div class="card-body">
-                                    <h4 class="card-title"><img src="../immagini/usrList.jpg" style="width: 20%; height: 30%;">Users</h4>
+                                    <h4 class="card-title"><img src="../immagini/usrList.jpg" style="width: 20%; height: 30%;">Utenti</h4>
                                     <p class="card-text">Amministra utenti registrati</p>
                                 </div>
                                 <div class="card-footer">

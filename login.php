@@ -32,22 +32,22 @@
                     <div class="col-8">
                         <form>
                              <div class="form-group">
-                                  <label for="inputUsername">Username*</label>
-                                  <input type="text" class="form-control" name="inputUser" id="inputUser" placeholder="MyUsername" required="required"/>
+                                  <label for="inputUsername">Nome utente*</label>
+                                  <input type="text" class="form-control" name="inputUser" id="inputUser" placeholder="MyUsername" required/>
                                 </div>
                                      
                                 <div class="form-group">
                                     <label for="inputPassword">Password*</label>
-                                    <input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="Password1234" required="required"/>
+                                    <input type="password" class="form-control" name="inputPass" id="inputPass" placeholder="Password1234" required/>
                                 </div>
-                            <button type="button" class="btn btn-outline-primary" onclick="loginFunction()">Login</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="loginFunction()">Accedi</button>
                         </form>
 
                             <div class="form-group">
                                 
                                 
                         <div class ="row">
-                            <a href="userPage/register.php"> Create an account</a>
+                            <a href="userPage/register.php">Crea un account</a>
                         </div>
                                     
                     </div>

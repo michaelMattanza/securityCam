@@ -71,7 +71,7 @@ and open the template in the editor.
          
          while($row= $result->fetch_assoc()){
                 echo '<tr>';
-                echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" onclick="selectedUser('.$row["id_sender"].')">Reply</button></button></th>';
+                echo '<th scope="row"><button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="usr-selected" name="usr-selected" onclick="selectedUser('.$row["id_sender"].')">Rispondi</button></button></th>';
                 echo '<td>'.$row["username"].'</td>';
                 echo '<td>'.$row["date"].'</td>';
                 echo '<td>'.$row["message"].'</td>';
@@ -87,7 +87,7 @@ and open the template in the editor.
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Answer</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Risposta</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -96,8 +96,8 @@ and open the template in the editor.
                       <textarea rows="6" cols="60" id="resp"></textarea>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="sendFunction()">Send</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-primary" onclick="sendFunction()">Invia</button>
                   </div>
                 </div>
               </div>

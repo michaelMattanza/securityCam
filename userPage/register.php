@@ -37,7 +37,7 @@ and open the template in the editor.
                      </div>
 
                      <div class="form-group">
-                        <label for="inputUsername">Username*</label>
+                        <label for="inputUsername">Nome utente*</label>
                         <input type="text" class="form-control" name="inputU" id="inputU" placeholder="MyUsername" required>
                      </div>
 
@@ -46,7 +46,7 @@ and open the template in the editor.
                         <input type="password" class="form-control" name="inputP" id="inputP" placeholder="Password1234" required>
                      </div>
 
-                        <button type="button" class="btn btn-outline-primary" onclick="changeFunction()">Sign in</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="changeFunction()">Registrati</button>
                     </form>
                     </div>
             <div class="col-2"></div>

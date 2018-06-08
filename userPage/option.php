@@ -65,7 +65,7 @@ and open the template in the editor.
                         <div class="col-2"></div>
                         <div class="col-8">
                             <input type="hidden" name="user_id" value="1">
-                             <button type="submit" class="btn btn-outline-primary btn-block" style="margin-top: 1%" onclick="sendMsgFunction()">Submit</button>
+                             <button type="submit" class="btn btn-outline-primary btn-block" style="margin-top: 1%" onclick="sendMsgFunction()">Invia</button>
                         </div>
                         <div class="col-2"></div>
                     </div>

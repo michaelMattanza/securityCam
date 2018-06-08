@@ -48,7 +48,7 @@ and open the template in the editor.
                     <thead>
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">Nome</th>
                             <th scope="col">Data attivazione</th>
                             <th scope="col">Data scadenza</th>
                         </tr>
