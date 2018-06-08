@@ -147,7 +147,7 @@
                                     <h2 style="margin-left: 15%">Download (windows)</h2><br>
                                 </div>
                                 <div class="row" id="acquista" style="margin-top: 3%; margin-left: 8%">
-                                    <p>I seguenti software permettono la visualizzazione dei video di sicurezza e le videocamere in Streaming!</p><br>
+                                    <p>I seguenti software permettono la visualizzazione dei video di sicurezza e lo streaming delle videocamere!</p><br>
                                 </div>
                                 <div class="row" style="margin-top: 1%; margin-bottom: 2%; margin-left: 8%; margin-right: 5%;">  
                                     <div class="col-6">
