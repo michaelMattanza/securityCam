@@ -1,8 +1,8 @@
 <?php
  session_start();
- if($_SESSION["autorized"]==0)
+ if($_SESSION["authorized"]==0)
  {
-    Header( "Location:login.php" );
+    Header( "Location: ../index.php" );
  }
 ?>
 <!DOCTYPE HTML>

@@ -1,6 +1,10 @@
 <?php
 
     session_start();
+     if($_SESSION["authorized"]==0)
+ {
+    Header( "Location: ../index.php" );
+ }
         
     require 'connectionDB.php';
     

@@ -35,7 +35,8 @@
         $_SESSION["username"]=$us;
         $_SESSION["password"]=$pswd;
         $_SESSION["id"]=$myId;
-        $_SESSION["autorized"]=1; 
+        $_SESSION["authorized"]=1; 
+        $_SESSION["chmod"]="user";
         $response = json_encode($alreadyExist);
         echo $response;
         }

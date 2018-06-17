@@ -21,14 +21,16 @@
                     $_SESSION["username"]=$name_readed;
                     $_SESSION["password"]=$psswd_readed;
                     $_SESSION["id"]= $row["id"];
-                    $_SESSION["autorized"]=1;
+                    $_SESSION["authorized"]=1;
                     if($row["chmod"] == 'admin')
                     {
+                        $_SESSION["chmod"]="admin";
                         $res ="administrator";
                         $response= json_encode($res);
                         echo $response;
                     }
                     else{
+                        $_SESSION["chmod"]="user";
                         $res ="user";
                         $response= json_encode($res);
                         echo $response;  

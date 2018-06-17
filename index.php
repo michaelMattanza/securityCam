@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -140,8 +143,23 @@
                                             <div class="custom-control custom-radio custom-control-inline">
                                                 <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" value="180">
                                                 <label class="custom-control-label" for="customRadioInline3">6 Mesi / 180€</label>
-                                              </div>
-                                            <button type="button" class="btn btn-outline-primary btn-block" onclick="activateFunction()">Select</button>
+                                              </div><?php
+                                             if(empty($_SESSION["chmod"]))
+                                                {
+                                                echo '<button type="button" class="btn btn-outline-primary btn-block disabled" onclick="activateFunction()">Select</button>';
+                                                }
+                                                else if(isset ($_SESSION["chmod"]))
+                                                {
+                                                    if($_SESSION["chmod"]=="user")
+                                                    {
+                                                        echo '<button type="button" class="btn btn-outline-primary btn-block" onclick="activateFunction()">Select</button>';
+                                                    }
+                                                    else
+                                                    {
+                                                        echo '<button type="button" class="btn btn-outline-primary btn-block disabled" onclick="activateFunction()">Select</button>';
+                                                    }
+                                                }
+    ?>
                                    </form>
                                     </div>
                             </div>
