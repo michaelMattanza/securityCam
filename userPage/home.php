@@ -1,6 +1,6 @@
 <?php
  session_start();
- if($_SESSION["authorized"]==0)
+ if($_SESSION["authorized"]==0 || $_SESSION["chmod"]=="admin")
  {
     header( "location: ../index.php" );
  }
